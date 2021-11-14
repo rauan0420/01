@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Онлайн таймер</title>
+
+    <meta name="keywords" content="Онлайн таймер, чтобы не забыть">
+    <meta name="description" content="Онлайн таймер - страничка, помогающая засекать время, чтобы что-нибудь не забыть.">
+
+    
+    <script type="text/javascript" src="js\jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js\bootstrap.js"></script>
+    <script type="text/javascript" src="js\angular.js"></script>
+    <script type="text/javascript" src="js\require.js"></script>
+    <!--<link rel="stylesheet" href="/css/bootstrap.css"/>-->
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="external\font-awesome-4.4.0\css\font-awesome.min.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<script type="text/javascript">
+    require.config({});
+</script>
+<div id="body">
+    <header class="logo-container">
+        <h1 class="logo"><a href="index.htm"><span class="online">Online</span><span class="timer">Timer</span></a></h1>
+    </header>
+
+        <h1>Обратная связь<span class="small">: ваши вопросы, предложения и пожелания</span></h1>
+    <div>
+        
+                        <form action="" method="post">
+                <table>
+                    <tr>
+                        <td><label for="name">Представьтесь:</label></td>
+                        <td><input id="name" name="name" type="text" value="" style="width: 400px;"></td>
+                    </tr>
+                                        <tr>
+                        <td colspan="2"><label for="text">Текст сообщения:</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea id="text" name="text" rows="10" cols="80" required="" placeholder="Ваше сообщение. Если есть вопрос, оставьте координаты для связи. Но ни в коем случае не Персональные Данные."></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="g-recaptcha" data-sitekey="6LdxSwkTAAAAANncOhJawJ4mMbZZdlt5JI7Y6UiP"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Отправить сообщение автору">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+
+    <footer>
+        <div id="links">
+            <a href="faq.html">Часто задаваемые вопросы</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="contact.html">Обратная связь</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="policy.html">Политика конфиденциальности</a>
+        </div>
+
+        <div id="copyright">© Юрий Малинов, 2008-2021 г</div>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-312223-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter36670455 = new Ya.Metrika({
+                    id:36670455,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/36670455" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

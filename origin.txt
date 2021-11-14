@@ -1,0 +1,76 @@
+Uri: https://onlinetimer.ru/
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\index.htm
+Content Type: text/html
+
+Uri: https://onlinetimer.ru/css/main.css
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\css\main.css
+Content Type: text/css
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/css/font-awesome.min.css
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\css\font-awesome.min.css
+Content Type: text/css
+
+Uri: https://onlinetimer.ru/faq.php
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\faq.html
+Content Type: text/html
+
+Uri: https://onlinetimer.ru/contact.php
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\contact.html
+Content Type: text/html
+
+Uri: https://onlinetimer.ru/policy.php
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\policy.html
+Content Type: text/html
+
+Uri: https://onlinetimer.ru/js/jquery-1.9.1.js
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\js\jquery-1.9.1.js
+Content Type: application/javascript
+
+Uri: https://onlinetimer.ru/js/bootstrap.js
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\js\bootstrap.js
+Content Type: application/javascript
+
+Uri: https://onlinetimer.ru/js/angular.js
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\js\angular.js
+Content Type: application/javascript
+
+Uri: https://onlinetimer.ru/js/require.js
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\js\require.js
+Content Type: application/javascript
+
+Uri: https://onlinetimer.ru/img/up-arrow.svg
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\img\up-arrow.svg
+Content Type: image/svg+xml
+
+Uri: https://onlinetimer.ru/img/glyphicons-halflings.png
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\img\glyphicons-halflings.png
+Content Type: image/png
+
+Uri: https://onlinetimer.ru/img/glyphicons-halflings-white.png
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\img\glyphicons-halflings-white.png
+Content Type: image/png
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/fonts/fontawesome-webfont.eot?v=4.4.0
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\fonts\fontawesome-webfont.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/fonts/fontawesome-webfont.eot?
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\fonts\fontawesome-webfont-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/fonts/fontawesome-webfont.woff2?v=4.4.0
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\fonts\fontawesome-webfont.woff2
+Content Type: 
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/fonts/fontawesome-webfont.woff?v=4.4.0
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\fonts\fontawesome-webfont.woff
+Content Type: application/font-woff
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/fonts/fontawesome-webfont.ttf?v=4.4.0
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\fonts\fontawesome-webfont.ttf
+Content Type: application/font-sfnt
+
+Uri: https://onlinetimer.ru/external/font-awesome-4.4.0/fonts/fontawesome-webfont.svg?v=4.4.0
+File Name: c:\Downloaded Web Sites\onlinetimer.ru\external\font-awesome-4.4.0\fonts\fontawesome-webfont.svg
+Content Type: image/svg+xml
+

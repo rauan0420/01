@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Онлайн таймер</title>
+
+    <meta name="keywords" content="Онлайн таймер, чтобы не забыть">
+    <meta name="description" content="Онлайн таймер - страничка, помогающая засекать время, чтобы что-нибудь не забыть.">
+
+    
+    <script type="text/javascript" src="js\jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js\bootstrap.js"></script>
+    <script type="text/javascript" src="js\angular.js"></script>
+    <script type="text/javascript" src="js\require.js"></script>
+    <!--<link rel="stylesheet" href="/css/bootstrap.css"/>-->
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="external\font-awesome-4.4.0\css\font-awesome.min.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+<body>
+<script type="text/javascript">
+    require.config({});
+</script>
+<div id="body">
+    <header class="logo-container">
+        <h1 class="logo"><a href="index.htm"><span class="online">Online</span><span class="timer">Timer</span></a></h1>
+    </header>
+
+        <div class="faq">
+        <h1>Политика конфиденциальности</h1>
+
+        <h2>1. Сбор данных</h2>
+
+        <p>Сбору подлежат сведения, обеспечивающие возможность повторного взаимодействия с пользователем, информация необходмимая для выполнения основной
+            функции сайта, а также информация, необходимая для улучшение эффективности работы предоставляемого продукта.</p>
+
+        <p>Некоторые действия пользователей автоматически сохраняются в журналах сервера:</p>
+        <ul>
+            <li>IP-адрес;</li>
+            <li>данные о типе браузера, надстройках, времени запроса и т. д.</li>
+            <li>Как используется полученная информация</li>
+        </ul>
+
+        <p>Сервис также может собирать данные о Вашей онлайн-активности, например, об созданных таймерах и частоте использования.</p>
+
+
+        <h2>2. Предоставление данных третьим лицам</h2>
+
+        Личные данные пользователей могут быть переданы лицам, не связанным с настоящим сайтом, если это необходимо:
+        <ul>
+            <li>для соблюдения закона, нормативно-правового акта, исполнения решения суда;</li>
+            <li>для выявления или воспрепятствования мошенничеству;</li>
+            <li>для устранения технических неисправностей в работе сайта;</li>
+            <li>для предоставления информации на основании запроса уполномоченных государственных органов.</li>
+        </ul>
+
+        <p>Данные могут быть переданы партнёрам для выполнения задач, связанных с функционалом сайта.</p>
+
+
+        <h2>3. Файлы cookies</h2>
+        <p>Файлы cookies - это небольшие текстовые файлы, которые устанавливаются на Ваш компьютер при посещении практически любого веб-сайта. Файлы cookies не
+            опознают Вас лично; они не могут нанести вред Вашему компьютеру. Они используются веб-сайтами, которые Вы посещаете, для того чтобы сделать Ваше
+            использование этих веб-сайтов более эффективным, предоставить Сервису данные, анализ которых поможет улучшить веб-сайт www.onlinetimer.ru в
+            целом.</p>
+
+        <p>На веб-сайте www.onlinetimer.ru Сервис использует файлы cookies для того, чтобы дать Вам возможность зайти на данный веб-сайт, не набирая каждый
+            раз свое имя пользователя. Другие файлы cookies помогают Сервис определить, что Вас интересует или не интересует на веб-сайте www.onlinetimer.ru.
+            Таким образом, при Вашем следующем посещении веб-сайта www.onlinetimer.ru Компания может обеспечить Вас более важными и полезными функциями.
+            Компания, а также некоторые Партнеры, используют файлы cookies на веб-сайте www.onlinetimer.ru для того, чтобы узнать, насколько эффективна реклама
+            и что именно посетители ищут на данном веб-сайте.</p>
+
+
+        <h2>4. Безопасность данных</h2>
+
+        Администрация сайта принимает все меры для защиты данных пользователей от несанкционированного доступа, в частности:
+        <ul>
+            <li>регулярные проверки на предмет наличия вредоносных кодов;</li>
+            <li>использование для размещения сайта виртуального выделенного сервера.</li>
+        </ul>
+
+
+        <h2>5. Изменения</h2>
+
+        Обновления политики конфиденциальности публикуются на данной странице.
+    </div>
+
+    <footer>
+        <div id="links">
+            <a href="faq.html">Часто задаваемые вопросы</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="contact.html">Обратная связь</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="policy.html">Политика конфиденциальности</a>
+        </div>
+
+        <div id="copyright">© Юрий Малинов, 2008-2021 г</div>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-312223-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter36670455 = new Ya.Metrika({
+                    id:36670455,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/36670455" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

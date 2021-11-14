@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Онлайн таймер</title>
+
+    <meta name="keywords" content="Онлайн таймер, чтобы не забыть">
+    <meta name="description" content="Онлайн таймер - страничка, помогающая засекать время, чтобы что-нибудь не забыть.">
+
+    
+    <script type="text/javascript" src="js\jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js\bootstrap.js"></script>
+    <script type="text/javascript" src="js\angular.js"></script>
+    <script type="text/javascript" src="js\require.js"></script>
+    <!--<link rel="stylesheet" href="/css/bootstrap.css"/>-->
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="external\font-awesome-4.4.0\css\font-awesome.min.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+<body>
+<script type="text/javascript">
+    require.config({});
+</script>
+<div id="body">
+    <header class="logo-container">
+        <h1 class="logo"><a href="index.htm"><span class="online">Online</span><span class="timer">Timer</span></a></h1>
+    </header>
+
+        <div class="faq">
+        <h1>Частозадаваемые вопросы</h1>
+        <dl class="faq">
+            <dt>А есть ли звук?</dt>
+            <dd>Да, звук есть. Звук работает через Adobe Flash, так что проверьте есть ли он и последней ли версии. Также
+                известны случаи проблем с банерорезками. Если всё это проверили, и на
+                <a href="https://moskva.fm" rel="nofollow">https://moskva.fm</a> всё работает, а тут звук молча не работает,
+                пишите версию браузера, попробуем посмотреть.
+            </dd>
+            <dt>Можно ли загрузить свои звуки?</dt>
+            <dd>Пока что этого нельзя сделать. Главным образом потому что неясно, как это должно выглядеть. Пишите предложения
+                обсудим, учтём.
+            </dd>
+        </dl>
+    </div>
+
+    <footer>
+        <div id="links">
+            <a href="faq.html">Часто задаваемые вопросы</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="contact.html">Обратная связь</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="policy.html">Политика конфиденциальности</a>
+        </div>
+
+        <div id="copyright">© Юрий Малинов, 2008-2021 г</div>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-312223-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter36670455 = new Ya.Metrika({
+                    id:36670455,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/36670455" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

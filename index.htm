@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Онлайн таймер</title>
+
+    <meta name="keywords" content="Онлайн таймер, чтобы не забыть">
+    <meta name="description" content="Онлайн таймер - страничка, помогающая засекать время, чтобы что-нибудь не забыть.">
+
+    
+    <script type="text/javascript" src="js\jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js\bootstrap.js"></script>
+    <script type="text/javascript" src="js\angular.js"></script>
+    <script type="text/javascript" src="js\require.js"></script>
+    <!--<link rel="stylesheet" href="/css/bootstrap.css"/>-->
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="external\font-awesome-4.4.0\css\font-awesome.min.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+<body>
+<script type="text/javascript">
+    require.config({});
+</script>
+<div id="body">
+    <header class="logo-container">
+        <h1 class="logo"><a href="index.htm"><span class="online">Online</span><span class="timer">Timer</span></a></h1>
+    </header>
+
+        <div ng-controller="Timer as c">
+        <div id="make-bookmark-block" ng-show="c.showBookmarkPromo" ng-cloak="">
+            <img src="img\up-arrow.svg" height="128px">
+
+            <div class="make-bookmark-info">
+                Для того, чтобы начать отсчёт на определённое время - просто перетащите нужную кнопку на панель закладок.<br>
+                <em>Дата/Время и прямой отсчёт - тоже!</em>
+                <div><a href="#" ng-click="c.hideBookmarkPromo()">Понял, скройте эту информацию</a></div>
+            </div>
+        </div>
+        <div id="time-header" ng-controller="TimeHeader as h">
+            <!--<a class="my-btn my-warning"><i class="icon-time icon-white"></i></a>-->
+            <a class="my-btn my-success" href="#!/set-time?seconds=forward"><i class="icon-play icon-white"></i></a>
+            <a class="my-btn my-warning" href="#!/setup">Дата/Время</a>
+        <span ng-repeat="time in h.times">
+            <a class="my-btn time" href="#!/set-time?seconds={{ time.seconds }}" ng-class="{'my-error': h.deleteMode}" ng-click="h.deleteTime($index)">{{ time.displayText() }}</a>
+        </span>
+            &nbsp;
+            <a ng-click="h.setup = !h.setup" class="my-btn my-warning" ng-class="{'setup-btn': h.setup}">Добавить/Удалить</a>
+
+            <div ng-show="h.setup" class="times-setup">
+                Добавить:
+                <label><input ng-model="h.add.hours" class="num small" type="number"> часов</label>
+                <label><input ng-model="h.add.minutes" class="num small" type="number"> минут</label>
+                <label><input ng-model="h.add.seconds" class="num small" type="number"> секунд,</label>
+                <label>описание: <input ng-model="h.add.description"></label>
+                <a class="my-btn my-success" ng-click="h.addTime()">Добавить</a>
+                <a class="my-btn my-error" ng-click="h.deleteMode = !h.deleteMode">Удалить</a>
+            </div>
+        </div>
+
+        <div id="timer" class="timer">
+            <!--А это самый простой способ сверстать такую штуку-->
+            <table>
+                <tr>
+                    <td class="timer-display" ng-class="{editing: c.editing}" ng-focusin="c.startEdit()" ng-focusout="c.finishEdit()">
+                        <span ng-show="c.display.minus">-</span>
+                    <span ng-show="c.display.days > 0 || c.editing" class="days">
+                        <input type="text" ng-model="c.display.days" select-on-focus=""> дн
+                    </span>
+                        <input type="text" ng-model="c.display.hours" select-on-focus="" blur-on-enter="">:<input type="text" ng-model="c.display.minutes" select-on-focus="" blur-on-enter="">:<input type="text" ng-model="c.display.seconds" select-on-focus="" blur-on-enter="">
+                    </td>
+                    <td rowspan="2" class="timer-controls">
+                        <a class="my-btn" ng-click="c.timerPlay()"><i class="fa" ng-class="{'fa-play': c.timer.isPaused(), 'fa-pause': !c.timer.isPaused()}"></i></a>
+                        <a class="my-btn" ng-click="c.timerRefresh()"><i class="fa fa-repeat"></i></a>
+                        <a class="my-btn" ng-class="{'my-btn-disabled': c.timer.type == 'forward'}" ng-click="c.toggleSetupTimer()"><i class="fa fa-wrench"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="timer-progress">
+                            <tr>
+                                <td class="timer-start">{{ c.display.start }}</td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="bar" ng-style="{width: c.display.progress + '%'}"></div>
+                                    </div>
+                                </td>
+                                <td class="timer-end">{{ c.display.end }}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="description">
+                        <input type="text" ng-model="c.timer.description" blur-on-enter="" select-on-focus="" placeholder="Нажмите, чтобы ввести описание таймера">
+                    </td>
+                </tr>
+            </table>
+
+
+            <div class="my-error my-error-box cursor-pointer" ng-show="c.timerActions.isPlaying" ng-click="c.timerActions.stop()">Остановить</div>
+
+
+            <div ng-show="c.setupTimer && c.timer.type != 'forward'" class="setup-timer">
+                <h2>Настройки таймера</h2>
+
+                <div class="my-error my-error-box" ng-show="!c.soundReady">Пока что не получилось загрузить звуки</div>
+                <table ng-show="c.timer.type != 'forward'">
+                    <tr>
+                        <th>Звук:</th>
+                        <td>
+                            <select ng-model="c.timer.soundId" ng-options="s.id as s.name for s in c.sounds"></select>
+                            <a href="" ng-click="c.testSound()" class="my-btn my-btn-small">проверить</a></td>
+                        
+                    </tr>
+                    <tr>
+                        <th>Громкость:</th>
+                        <td><input ng-model="c.timer.volume" class="num small" type="number">
+                    </td></tr>
+                    <tr>
+                        <th>По окончании времени:</th>
+                        <td>
+                            <select ng-model="c.timer.type" ng-options="k as v for (k, v) in c.selectableTypes"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <input type="checkbox" ng-model="c.timer.alert" id="show-alert">
+                        </th>
+                        <td>
+                            <label for="show-alert">Показывать окно и блокировать <br>браузер по истечении времени</label>
+                        </td>
+                    </tr>
+                </table>
+                <div class="my-info-box" ng-show="c.timer.type == 'forward'">Настройки звуков не показаны, т.к. таймер ведёт отсчёт времени вперёд.</div>
+            </div>
+            <!--<pre>{{ c | json}}</pre>-->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.soundManagerDeferred = jQuery.Deferred();
+
+        require.config({
+            urlArgs: 'v=45'
+        });
+
+        require(['js/timer', 'js/soundmanager2-jsmin'], function (timer, soundManagerModule) {
+            window.OnlineTimer = timer.OnlineTimer;
+            window.soundManagerInstance = soundManagerModule.getInstance();
+            window.soundManagerInstance.setup({
+                url: '/swf/',
+                preferFlash: true,
+                onready: function () {
+                    soundManagerDeferred.resolve(window.soundManagerInstance);
+                }
+            });
+
+            angular.bootstrap(document, ['OnlineTimer']);
+        })
+    </script>
+
+    <footer>
+        <div id="links">
+            <a href="faq.html">Часто задаваемые вопросы</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="contact.html">Обратная связь</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="policy.html">Политика конфиденциальности</a>
+        </div>
+
+        <div id="copyright">© Юрий Малинов, 2008-2021 г</div>
+    </footer>
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-312223-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter36670455 = new Ya.Metrika({
+                    id:36670455,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/36670455" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
